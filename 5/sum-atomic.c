@@ -6,7 +6,7 @@ long sum = 0;
 
 void Tsum() {
   for (int i = 0; i < N; i++) {
-    sum++;
+    asm volatile("lock addq $1, %0": "+m"(sum));
   }
 }
 

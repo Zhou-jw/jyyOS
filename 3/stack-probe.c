@@ -1,4 +1,4 @@
-#include "thread.h"
+#include "../thread.h"
 
 __thread char *base, *cur; // thread-local variables
 __thread int id;

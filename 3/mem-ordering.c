@@ -1,4 +1,4 @@
-#include "thread.h"
+#include "../thread.h"
 
 int x = 0, y = 0;
 

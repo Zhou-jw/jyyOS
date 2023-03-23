@@ -1,4 +1,4 @@
-#include "thread.h"
+#include "../thread.h"
 
 unsigned long balance = 100;
 

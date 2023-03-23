@@ -1,5 +1,5 @@
-#include "thread.h"
-#include "thread-sync.h"
+#include "../thread.h"
+#include "../thread-sync.h"
 
 #define N 10000000
 spinlock_t lock = SPIN_INIT();
