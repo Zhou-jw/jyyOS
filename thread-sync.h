@@ -1,4 +1,5 @@
 #include <semaphore.h>
+#include <pthread.h>
 
 // Spinlock
 typedef int spinlock_t;
@@ -13,7 +14,7 @@ static inline int atomic_xchg(volatile int *addr, int newval) {
 
 void spin_lock(spinlock_t *lk) {
   while (1) {
-    intptr_t value = atomic_xchg(lk, 1);
+    int value = atomic_xchg(lk, 1);
     if (value == 0) {
       break;
     }
