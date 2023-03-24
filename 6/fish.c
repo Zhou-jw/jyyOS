@@ -1,4 +1,4 @@
-#include "thread.h"
+#include "../thread.h"
 
 #define LENGTH(arr) (sizeof(arr) / sizeof(arr[0]))
 
