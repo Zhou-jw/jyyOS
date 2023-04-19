@@ -19,3 +19,14 @@ int main() {
   join();
   printf("balance = %lu\n", balance);
 }
+/*
+Thread 1                          Thread 2
+call Alipay_withdraw()            
+if (balance >= amt)
+interrupt: switch to Thread 2
+                                  call Alipay_withdraw();
+                                  if (balance >= amt)
+                                  interrupt: switch to Thread 1
+
+now 2 threads (balance >= amt)=True and then balance - 200
+*/

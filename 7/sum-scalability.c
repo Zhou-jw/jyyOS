@@ -23,4 +23,5 @@ int main(int argc, char *argv[]) {
   }
   join();
   assert(sum == n * nthread);
+  // printf("%ld", sum);
 }

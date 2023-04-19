@@ -1,5 +1,5 @@
-#include "thread.h"
-#include "thread-sync.h"
+#include "../thread.h"
+#include "../thread-sync.h"
 
 struct cpu {
   int ncli;
@@ -11,7 +11,11 @@ struct spinlock {
   struct cpu *cpu;
 };
 
-__thread struct cpu lcpu;
+__thread struct cpu lcpu; 
+/*
+Thread-local storage (TLS) is a mechanism by which variables are allocated 
+such that there is one instance of the variable per extant thread.
+*/
 
 struct cpu *mycpu() {
   return &lcpu;
@@ -136,7 +140,7 @@ void Tworker(int tid) {
 
 int main() {
   initlock(&lk, "spinlock");
-  for (int i = 0; i < 2; i++) {
+  for (int i = 0; i < 3; i++) {
     create(Tworker);
   }
   join();

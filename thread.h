@@ -14,17 +14,17 @@ struct thread {
   void (*entry)(int);
 };
 
-struct thread tpool[NTHREAD], *tptr = tpool;
+struct thread tpool[NTHREAD], * tptr = tpool;
 
-void *wrapper(void *arg) {
-  struct thread *thread = (struct thread *)arg;
+void* wrapper(void* arg) {
+  struct thread* thread = (struct thread*)arg;
   thread->entry(thread->id);
   return NULL;
 }
 
-void create(void *fn) {
+void create(void* fn) {
   assert(tptr - tpool < NTHREAD);
-  *tptr = (struct thread) {
+  *tptr = (struct thread){
     .id = tptr - tpool + 1,
     .status = T_LIVE,
     .entry = fn,
@@ -35,7 +35,7 @@ void create(void *fn) {
 
 void join() {
   for (int i = 0; i < NTHREAD; i++) {
-    struct thread *t = &tpool[i];
+    struct thread* t = &tpool[i];
     if (t->status == T_LIVE) {
       pthread_join(t->thread, NULL);
       t->status = T_DEAD;

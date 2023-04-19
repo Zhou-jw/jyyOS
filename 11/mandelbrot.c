@@ -1,4 +1,4 @@
-#include "thread.h"
+#include "../thread.h"
 #include <math.h>
 
 int NT;
@@ -31,7 +31,7 @@ void dump(FILE *fp, int step) {
 void Tworker(int tid) {
   for (int i = 0; i < W; i++)
     for (int j = 0; j < H; j++)
-      if (belongs(i, j, tid - 1)) {
+      if (belongs(i, j, tid-2)) {
         double a = 0, b = 0, c, d;
         while ((c = a * a) + (d = b * b) < 4 && x[i][j]++ < 880) {
           b = 2 * a * b + j * 1024.0 / H * 8e-9 - 0.645411;
@@ -64,16 +64,16 @@ int main(int argc, char *argv[]) {
 
   create(Tdump);
 
-  #pragma omp parallel num_threads(NT)
-  #pragma omp for schedule(static)
-  for (int i = 0; i < NT; i++) {
-    Tworker(i + 1);  // Sequential code
-  }
+  // #pragma omp parallel num_threads(NT)
+  // #pragma omp for schedule(static)
+  // for (int i = 0; i < NT; i++) {
+  //   Tworker(i + 1);  // Sequential code
+  // }
   // Equivalent to:
   //
-  // for (int i = 0; i < NT; i++) {
-  //   create(Tworker);
-  // }
+  for (int i = 0; i < NT; i++) {
+    create(Tworker);
+  }
 
   join();
   return 0;
@@ -81,5 +81,5 @@ int main(int argc, char *argv[]) {
 /*
 need to install viu and imagemagick
 convert ppm to jpg and open in vscode
-gcc  -ggdb -Wall -O2 -fopenmp mandelbrot.c -lm
+gcc  -g3 -Wall -O2 -fopenmp mandelbrot.c -lm
 */

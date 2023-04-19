@@ -1,5 +1,5 @@
-#include "thread.h"
-#include "thread-sync.h"
+#include "../thread.h"
+#include "../thread-sync.h"
 
 int n, count = 0;
 mutex_t lk = MUTEX_INIT();

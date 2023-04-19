@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.tcc": "c",
+        "ostream": "c",
+        "stop_token": "c"
+    }
+}

@@ -42,3 +42,9 @@ int main(int argc, char *argv[]) {
     create(Tconsume);
   }
 }
+/*
+wrong! the right impletementation see pv-cv-while.c
+Tp  Tc  Tp  Tc
+            wait(cv)
+
+*/
