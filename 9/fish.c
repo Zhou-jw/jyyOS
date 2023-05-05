@@ -45,6 +45,7 @@ void fish_before(char ch) {
 void fish_after(char ch) {
   pthread_mutex_lock(&lk);
   quota++;
+  assert(quota == 1);
   current = next(ch);
   assert(current);
   pthread_cond_broadcast(&cond);

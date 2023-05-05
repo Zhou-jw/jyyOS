@@ -1,2 +1,6 @@
-/a.out
-.gitignore
+*
+!*/
+!.gitignore
+!*.c
+!*.h
+!*.md

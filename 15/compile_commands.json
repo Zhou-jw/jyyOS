@@ -1,7 +1,7 @@
 [
   {
     "arguments": [
-      "/usr/bin/x86_64-linux-gnu-gcc",
+      "/usr/sbin/x86_64-linux-gnu-gcc",
       "-std=gnu11",
       "-O2",
       "-Wall",
@@ -9,7 +9,6 @@
       "-I/home/zjw/jyyOS/15/include",
       "-I/home/zjw/os-workbench/abstract-machine/am/include/",
       "-I/home/zjw/os-workbench/abstract-machine/klib/include/",
-      "-g3",
       "-D__ISA__=\"x86_64\"",
       "-D__ISA_X86_64__",
       "-D__ARCH__=x86_64-qemu",
@@ -22,7 +21,7 @@
       "-fno-stack-protector",
       "-Wno-main",
       "-U_FORTIFY_SOURCE",
-      "-gdwarf-2",
+      "-ggdb",
       "-m64",
       "-fPIC",
       "-mno-sse",
