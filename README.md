@@ -1,3 +1,6 @@
+# Note
+
+# ?
 ## Lock
 ### Spinlock
 #### Load and Store
@@ -97,27 +100,14 @@ but context switch is still costly
 |   broadcast(cv)   //wake up all the threads that satisfy cond
 +unlock(&mutex)
 
-6.1810 / Fall 2022
-https://pdos.csail.mit.edu/6.828/2022/schedule.html
+# 24
+## 进程的实现
+- copy on write
+这是pmap不爆炸的原因
 
-操作系统：设计与实现 (2022 春季学期)
-http://jyywiki.cn/OS/2022/
+## 处理器调度原理
+- Round-Robin
+- Complete Fair scheduling(CFS)
 
-操作系统：设计与实现 (2023 春季学期)
-http://jyywiki.cn/OS/2023/
-
-Introduction · GitBook
-https://nju-projectn.github.io/ics-pa-gitbook/ics2022/index.html
-
-实验须知 - 操作系统2022秋 | 哈工大（深圳）
-http://hitsz-cslab.gitee.io/os-labs/
-
-Operating Systems: Three Easy Pieces
-https://pages.cs.wisc.edu/~remzi/OSTEP/
-
-操作系统-设计与实现-五 | H4wk1ns's blog
-https://jiaweihawk.gitee.io/2021/09/07/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-%E4%BA%94/
-
-操作系统-设计与实现-四 | H4wk1ns's blog
-https://jiaweihawk.gitee.io/2021/08/10/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0-%E5%9B%9B/
+## 真实的处理器调度
 
