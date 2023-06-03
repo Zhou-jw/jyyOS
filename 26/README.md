@@ -15,7 +15,7 @@
 - 一个专门执行"Memcpy"程序的CPU
 - mem -> mem
 - device -> mem
-- men -> device
+- mem -> device
 - sudo cat /proc/iomem
 
 # GPU 和 加速器
