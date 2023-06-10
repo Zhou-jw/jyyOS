@@ -5,4 +5,5 @@
 !*.h
 !*.S
 !*.md
+!*.py
 !Makefile
