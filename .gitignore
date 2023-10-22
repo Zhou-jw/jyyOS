@@ -1,10 +1,14 @@
 *
-!*/
 .*
+!*/
 !.gitignore
+!.gdbinit
 !*.c
 !*.h
 !*.S
 !*.md
 !*.py
 !Makefile
+!*.go
+!*.cu
+!*.gdb
