@@ -16,18 +16,18 @@ struct thread {
 
 struct thread tpool[NTHREAD], * tptr = tpool;
 
-void* wrapper(void* arg) {
+inline void* wrapper(void* arg) {
   struct thread* thread = (struct thread*)arg;
   thread->entry(thread->id);
   return NULL;
 }
 
-void create(void* fn) {
+inline void create(void *fn) {
   assert(tptr - tpool < NTHREAD);
   *tptr = (struct thread){
-    .id = tptr - tpool + 1,
+    .id = int(tptr - tpool + 1),
     .status = T_LIVE,
-    .entry = fn,
+    .entry = (void (*)(int))fn,
   };
   pthread_create(&(tptr->thread), NULL, wrapper, tptr);
   ++tptr;
