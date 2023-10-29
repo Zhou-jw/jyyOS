@@ -25,7 +25,7 @@ inline void* wrapper(void* arg) {
 inline void create(void *fn) {
   assert(tptr - tpool < NTHREAD);
   *tptr = (struct thread){
-    .id = int(tptr - tpool + 1),
+    .id = (tptr - tpool + 1),
     .status = T_LIVE,
     .entry = (void (*)(int))fn,
   };

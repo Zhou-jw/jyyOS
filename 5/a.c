@@ -1,4 +1,4 @@
-#include "../thread.h"
+#include "thread.h"
 
 void Ta() { while (1) { printf("a"); } }
 void Tb() { while (1) { printf("b"); } }
