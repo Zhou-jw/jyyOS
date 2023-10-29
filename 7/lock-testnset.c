@@ -1,4 +1,4 @@
-#include "../thread.h"
+#include "thread.h"
 #include <string.h>
 #define N 100000000
 

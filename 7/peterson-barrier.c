@@ -1,4 +1,4 @@
-#include "../thread.h""
+#include "thread.h"
 
 #define A 1
 #define B 2
