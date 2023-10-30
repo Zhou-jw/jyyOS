@@ -16,13 +16,13 @@ struct thread {
 
 struct thread tpool[NTHREAD], * tptr = tpool;
 
-inline void* wrapper(void* arg) {
+static inline void* wrapper(void* arg) {
   struct thread* thread = (struct thread*)arg;
   thread->entry(thread->id);
   return NULL;
 }
 
-inline void create(void *fn) {
+static inline void create(void *fn) {
   assert(tptr - tpool < NTHREAD);
   *tptr = (struct thread){
     .id = (tptr - tpool + 1),
